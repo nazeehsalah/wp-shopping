@@ -35,7 +35,7 @@ export class ProductIndetailsPage {
 
     this.product = this.navParams.get("product");
     console.log(this.product);
-    this.woo = WP.init(true);
+    /* this.woo = WP.init(true); */
     this.woo.getAsync('products/' + this.product.id + '/reviews').then((data) => {
       this.reviews = JSON.parse(data.body);
       console.log(this.reviews);

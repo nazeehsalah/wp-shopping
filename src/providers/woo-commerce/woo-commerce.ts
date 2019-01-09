@@ -9,25 +9,29 @@ import * as WC from 'woocommerce-api';
 */
 @Injectable()
 export class WooCommerceProvider {
-
-  Woo: any;
-  Woo2: any;
+  private url = "http://dirbrokers.net/index.php/wp-json/wp/v2/"
+  /* Woo: any;
+  Woo2: any; */
   constructor(public http: HttpClient) {
-    this.Woo = WC({
-      url: "http://52.66.171.54",
-      consumerKey: "ck_2ec7be12c0191a8a222cb85e89eea6291e0746e1",
-      consumerSecret: "cs_a300ce55d107c61910208ae1d37f4c4978561b87"
+  }
+  getWooCommerceData(url){
+    return this.http.get(this.url+url)
+  } 
+}
+ /*  this.Woo = WC({
+      url: "http://dirbrokers.net/api",
+      consumerKey: "ck_3f769db9695333e292aff91f8453f4b8eb82e096",
+      consumerSecret: "cs_4923aace5bba06124375c0cd70a7e2bfe18cbde5"
     });
 
-    this.Woo2 = WC({
-      url: "http://52.66.171.54",
-      consumerKey: "ck_2ec7be12c0191a8a222cb85e89eea6291e0746e1",
-      consumerSecret: "cs_a300ce55d107c61910208ae1d37f4c4978561b87",
-      wpAPI: true,
-      version: "wc/v2"
-    });
-  }
-  init(v2?: boolean) {
+     this.Woo2 = WC({
+       url: "http://dirbrokers.net",
+       consumerKey: "ck_3f769db9695333e292aff91f8453f4b8eb82e096",
+       consumerSecret: "cs_4923aace5bba06124375c0cd70a7e2bfe18cbde5",
+       wpAPI: true,
+       version: "wc/v2"
+     }); */
+/* init(v2?: boolean) {
     if (v2 == true) {
       return this.Woo2;
     } else {
@@ -35,5 +39,4 @@ export class WooCommerceProvider {
     }
   }
 
-
-}
+ */

@@ -32,11 +32,12 @@ export class MenuPage {
     private events: Events,
     private WP: WooCommerceProvider
   ) {
-    this.homePage = 'HomePage';
+    this.homePage = HomePage;
     this.categories = [];
     this.user = {};
-    this.woo = WP.init();
-    this.woo.getAsync("products/categories").then((data) => {
+    /*  this.woo = WP.init(); */
+ /*    this.WP.getWooCommerceData("products/categories")
+    .subscribe((data:any) => {
       console.log(JSON.parse(data.body).product_categories);
       let temp: any[] = JSON.parse(data.body).product_categories;
       for (let i = 0; i < temp.length; i++) {
@@ -65,7 +66,7 @@ export class MenuPage {
       }
     }, (err) => {
       console.log(err)
-    });
+    }); */
     this.events.subscribe("updateMenu", () => {
       this.storage.ready().then(() => {
         this.storage.get("userLoginInfo").then((userLoginInfo) => {
@@ -103,7 +104,7 @@ export class MenuPage {
     })
   }
   openCategoryPage(category) {
-    this.childNavCtrl.setRoot('ProductsByCategory', { "category": category });
+    this.childNavCtrl.setRoot('ProductInCategoryPage', { "category": category });
   }
   openPage(pageName: string) {
     if (pageName == "signup") {

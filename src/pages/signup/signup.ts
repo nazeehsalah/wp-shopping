@@ -26,8 +26,8 @@ export class SignupPage {
     this.newUser.shipping_address = {};
     this.billing_shipping_same = false;
     //this.newUser.billing_address.country = "India"
-    this.WooCommerce = WP.init();
-  }
+/*     this.WooCommerce = WP.init();
+ */  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Signup');
   }

@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CheckoutPage } from './../pages/checkout/checkout';
 import { SearchPage } from './../pages/search/search';
 import { SignupPage } from './../pages/signup/signup';
@@ -18,12 +19,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WooCommerceProvider } from '../providers/woo-commerce/woo-commerce';
 import { IonicStorageModule } from '@ionic/storage';
 import {OneSignal} from "@ionic-native/onesignal"
+import { HomePageModule } from '../pages/home/home.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+   /*  HomePage, */
     MenuPage,
     CartPage,
     ProductIndetailsPage,
@@ -35,8 +37,10 @@ import {OneSignal} from "@ionic-native/onesignal"
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HomePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

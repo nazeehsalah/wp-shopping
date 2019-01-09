@@ -36,7 +36,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.oneSignal.startInit('36c56d68-e49d-4c82-83a8-12a0b6118587', '1061979633707');
+     /*  this.oneSignal.startInit('36c56d68-e49d-4c82-83a8-12a0b6118587', '1061979633707');
 
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 
@@ -48,7 +48,7 @@ export class MyApp {
         // do something when a notification is opened
       });
 
-      this.oneSignal.endInit();
+      this.oneSignal.endInit(); */
     });
   }
 }

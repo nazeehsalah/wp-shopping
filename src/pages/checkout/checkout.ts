@@ -37,7 +37,7 @@ export class CheckoutPage {
       { method_id: "cheque", method_title: "Cheque Payment" },
       { method_id: "cod", method_title: "Cash on Delivery" },
       { method_id: "paypal", method_title: "PayPal" }];
-    this.WooCommerce = WP.init(true);
+    /* this.WooCommerce = WP.init(true); */
     this.storage.get("userLoginInfo").then((userLoginInfo) => {
       this.userInfo = userLoginInfo.user;
       let email = userLoginInfo.user.email;

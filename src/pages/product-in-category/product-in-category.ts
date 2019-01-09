@@ -28,7 +28,7 @@ export class ProductInCategoryPage {
   ) {
     this.page = 1;
     this.category = this.navParams.get("category");
-    this.woo = WP.init();
+    /* this.woo = WP.init(); */
     this.woo.getAsync("products?filter[category]=" + this.category.slug).then((data) => {
       console.log(JSON.parse(data.body));
       this.products = JSON.parse(data.body).products;

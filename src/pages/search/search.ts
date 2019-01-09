@@ -27,7 +27,7 @@ export class SearchPage {
      private WP: WooCommerceProvider) {
     console.log(this.navParams.get("searchQuery"));
     this.searchQuery = this.navParams.get("searchQuery");
-    this.WooCommerce = WP.init();
+    /* this.WooCommerce = WP.init(); */
     this.WooCommerce.getAsync("products?filter[q]=" + this.searchQuery).then((searchData) => {
       this.products = JSON.parse(searchData.body).products;
     });
